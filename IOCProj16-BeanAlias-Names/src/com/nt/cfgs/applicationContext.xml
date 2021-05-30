@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="welcome" class="com.nt.beans.WelcomeGreetings"/>
+	
+	<!-- Since we provide alias name without id tag, it can not have default bean id -->
+	<bean name="wg1,wg2" class="com.nt.beans.WelcomeGreetings"/>
+	
+	<alias name="welcome" alias="wg3"/>
+	
+	<bean name="d" class="java.util.Date"/>
+
+</beans>

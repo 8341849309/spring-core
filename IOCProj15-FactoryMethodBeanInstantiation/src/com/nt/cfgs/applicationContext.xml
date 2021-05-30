@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- static factory method returning relevant class obj -->
+	<bean id="cal" class="java.util.Calendar" factory-method="getInstance" /> <!-- Calendar,getInstance() -->
+
+	<!-- static factory method returning its own class obj -->
+	<bean id="clazz" class="java.lang.Class" factory-method="forName">	<!-- Class.forName(java.util.Date) -->
+		<constructor-arg value="java.util.Date"/>
+	</bean>
+
+	<!-- static factory method returning different class obj -->
+	<bean id="props" class="java.lang.System" factory-method="getProperties"/>	<!-- System.getProperties() -->
+	
+	
+	
+	<!-- ************************************************************************************************************* -->
+	
+	
+	<!-- instance factory method returning its own class obj -->
+	<bean id="s1" class="java.lang.String">
+		<constructor-arg value="Hello"/>	<!-- String s1=new String("Hello") -->
+	</bean>
+	<bean id="s2" factory-bean="s1" factory-method="concat"> <!-- s1.concat("Venkat") -->
+		<constructor-arg value=" Venkat"/>
+	</bean>
+
+	<!-- instance factory method returning different class obj -->
+	<bean id="sb" class="java.lang.StringBuffer">
+		<constructor-arg value="How r u?"/>
+	</bean>
+	<bean id="s3" factory-bean="sb" factory-method="substring">	<!-- sb.subString(0,4) -->
+		<constructor-arg value="0"/>
+		<constructor-arg value="4"/>
+	</bean>
+
+	<!-- instance factory method returning relevant class obj -->
+	<bean id="al" class="java.util.ArrayList"/>
+	
+	<bean id="itr" factory-bean="al" factory-method="iterator"/>	<!-- al.iterator() -->
+
+
+</beans>
