@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+ 	
+ 	<!-- 
+ 	Constructor injection based on Constructor param name bean id matching
+ 	<bean id="electricEng" class="com.nt.comp.ElectricEngine"/>
+ 	<bean id="eng" class="com.nt.comp.DieselEngine"/>
+	<bean id="petrol" class="com.nt.comp.PetrolEngine"/>
+	
+	<bean id="vehicle" class="com.nt.vehicle.Vehicle" autowire="constructor"/>
+ 	 -->
+ 	
+ 	<!--  
+ 	<bean id="electricEng" class="com.nt.comp.ElectricEngine" primary="true"/>
+ 	<bean id="eng" class="com.nt.comp.DieselEngine"/>
+	<bean id="petrol" class="com.nt.comp.PetrolEngine"/>
+	
+	<bean id="vehicle" class="com.nt.vehicle.Vehicle" autowire="constructor"/>
+ 	 --> 
+ 	 
+ 	<bean id="electricEng" class="com.nt.comp.ElectricEngine" autowire-candidate="false"/>
+ 	<bean id="eng" class="com.nt.comp.DieselEngine" autowire-candidate="false"/>
+	<bean id="petrol" class="com.nt.comp.PetrolEngine"/>
+	
+	<bean id="vehicle" class="com.nt.vehicle.Vehicle" autowire="constructor"/>
+ 	
+ 	 
+</beans>

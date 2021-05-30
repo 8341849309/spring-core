@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire-candidates="electricEng" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- 
+	<bean id="electric" class="com.nt.comp.ElectricEngine"/>
+	<bean id="diesel" class="com.nt.comp.DieselEngine"/>
+	<bean id="petrol" class="com.nt.comp.PetrolEngine"/>
+	 -->
+	<!-- 
+	<bean id="vehicle" class="com.nt.vehicle.Vehicle" autowire="byName"/>Both target attr name and dependent id should match
+	<alias name="petrol" alias="eng"/>	
+	 -->
+	 <!-- *********************************** -->
+	 
+	<!-- <bean id="electric" class="com.nt.comp.ElectricEngine" autowire-candidate="false"/>
+	<bean id="diesel" class="com.nt.comp.DieselEngine"/>
+	<bean id="petrol" class="com.nt.comp.PetrolEngine" autowire-candidate="false"/>
+	 -->
+	<!-- 
+	<bean id="electric" class="com.nt.comp.ElectricEngine"/>
+	<bean id="diesel" class="com.nt.comp.DieselEngine"/>
+	<bean id="petrol" class="com.nt.comp.PetrolEngine" primary="true"/>
+	
+	<bean id="vehicle" class="com.nt.vehicle.Vehicle" autowire="byType"/>
+ 	-->
+ 	
+ 	<bean id="electricEng" class="com.nt.comp.ElectricEngine"/>
+	<bean id="dieselEng" class="com.nt.comp.DieselEngine"/>
+	<bean id="petrolEng" class="com.nt.comp.PetrolEngine"/>
+	
+	<bean id="vehicle" class="com.nt.vehicle.Vehicle" autowire="byType"/>
+ 	
+</beans>
