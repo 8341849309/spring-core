@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="stu1" class="com.nt.comp.Student">
+		<constructor-arg value="101"/>
+		<constructor-arg value="Venkateswarlu"/>
+		<constructor-arg value="Madanapalle"/>
+		<constructor-arg value="74.3"/>
+	</bean>
+
+	<bean id="stu2" class="com.nt.comp.Student">
+		<constructor-arg value="101"/>
+		<constructor-arg value="Venkateswarlu"/>
+		<constructor-arg value="Madanapalle"/>
+	</bean>
+
+	<bean id="stu3" class="com.nt.comp.Student">
+		<constructor-arg value="101"/>
+		<constructor-arg value="Venkateswarlu"/>
+	</bean>
+
+</beans>
