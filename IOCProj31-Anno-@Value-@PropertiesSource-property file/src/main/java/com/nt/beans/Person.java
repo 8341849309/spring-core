@@ -1,0 +1,20 @@
+package com.nt.beans;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+
+import lombok.ToString;
+
+@Component("per")
+@ToString
+@PropertySource(value = {"com/nt/commons/myfile.properties","com/nt/commons/myfile1.properties"})
+public class Person {
+
+	@Value("101")
+	private int pid;
+	@Value("Venkateswarlu")
+	private String pname;
+	@Value("22.0417")
+	private float age;
+}
