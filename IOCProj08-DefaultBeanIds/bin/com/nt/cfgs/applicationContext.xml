@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean class="com.nt.comp.SampleBean">
+		<property name="name" value="Venkateswarlu"/>
+		<property name="age" value="23"/>
+	</bean>
+	
+	<bean class="com.nt.comp.SampleBean">
+		<property name="name" value="Sunil"/>
+		<property name="age" value="23"/>
+	</bean>
+	
+	<bean class="com.nt.comp.SampleBean">
+		<property name="name" value="Manju"/>
+		<property name="age" value="23"/>
+	</bean>
+
+	<bean class="java.util.Date"/>
+	
+	<bean class="java.util.Date">
+		<property name="date" value="16"/>
+		<property name="month" value="05"/>
+		<property name="year" value="1998"/>
+	</bean>
+
+</beans>
