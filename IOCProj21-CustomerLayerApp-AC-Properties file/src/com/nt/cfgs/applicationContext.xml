@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<context:property-placeholder
+		location="com/nt/commons/jdbc.properties" />
+
+
+	<!-- cfg of properties files -->
+<!-- 	<bean id="pphc"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location"
+			value="com/nt/commons/jdbc.properties" />
+		<property name="locations">
+			<array>
+				<value>com/nt/commons/jdbc.properties</value>
+			</array>
+		</property>
+	</bean>
+ -->
+	<!-- DataSource obj -->
+	<bean id="dmds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<!-- DAO Obj -->
+	<bean id="dao" class="com.nt.dao.CustomerDAOImpl">
+		<constructor-arg ref="dmds" />
+	</bean>
+
+	<!-- Service Obj -->
+	<bean id="ser" class="com.nt.service.CustomerServiceImpl">
+		<constructor-arg ref="dao" />
+	</bean>
+
+	<!-- Controller Obj -->
+	<bean id="controller" class="com.nt.controller.CustomerController">
+		<constructor-arg ref="ser" />
+	</bean>
+
+</beans>
