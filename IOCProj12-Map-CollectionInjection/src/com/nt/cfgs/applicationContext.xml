@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="now" class="java.util.Date"/>
+	
+	<bean id="est" class="java.util.Date">
+		<property name="date" value="16"/>
+		<property name="month" value="05"/>
+		<property name="year" value="1998"/>
+	</bean>
+
+	<bean id="inde" class="java.util.Date">
+		<constructor-arg name="year" value="1947"/>
+		<constructor-arg name="month" value="07"/>
+		<constructor-arg name="date" value="15"/>
+	</bean>
+
+	<bean id="store" class="com.nt.comp.FruitStore">
+		<property name="fruitsInfo">
+			<map key-type="java.lang.String" value-type="java.lang.Float">
+				<entry>
+					<key><value>Banana</value></key>
+					<value>35</value>
+				</entry>
+				<entry key="Mango" value="60"/>
+				<entry key="Grape" value="100"/>
+			</map>
+		</property>
+		<property name="impDates">
+			<map key-type="java.lang.String" value-type="java.util.Date">
+				<entry>
+					<key><value>Current Date</value></key>
+					<ref bean="now"/>
+				</entry>
+				<entry key="Independence" value-ref="inde"/>
+				<entry key="dob" value-ref="est"></entry>
+			</map>
+		</property>
+	</bean>
+
+	
+</beans>

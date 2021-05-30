@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="now" class="java.util.Date"/>
+	
+	<bean id="est" class="java.util.Date">
+		<property name="date" value="16"/>
+		<property name="month" value="05"/>
+		<property name="year" value="1998"/>
+	</bean>
+
+	<bean id="inde" class="java.util.Date">
+		<constructor-arg name="year" value="1947"/>
+		<constructor-arg name="month" value="07"/>
+		<constructor-arg name="date" value="15"/>
+	</bean>
+
+	<bean id="college" class="com.nt.comp.College">
+		<property name="favStudents">
+			<array>
+				<value>Venkateswarlu</value>
+				<value>Vishnu</value>
+				<value>Manju</value>
+				<value>Sunil</value>
+			</array>
+		</property>
+		<property name="impDates">
+			<list>
+				<ref bean="now"/>
+				<ref bean="est"/>
+				<ref bean="inde"/>
+			</list>
+		</property>
+	</bean>
+
+</beans>

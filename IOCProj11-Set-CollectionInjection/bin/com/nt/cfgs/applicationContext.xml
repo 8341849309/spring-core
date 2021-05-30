@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="now" class="java.util.Date"/>
+	
+	<bean id="est" class="java.util.Date">
+		<property name="date" value="16"/>
+		<property name="month" value="05"/>
+		<property name="year" value="1998"/>
+	</bean>
+
+	<bean id="inde" class="java.util.Date">
+		<constructor-arg name="year" value="1947"/>
+		<constructor-arg name="month" value="07"/>
+		<constructor-arg name="date" value="15"/>
+	</bean>
+
+	<bean id="info" class="com.nt.comp.FacultyInfo">
+		<property name="impDates">
+			<set>
+				<ref bean="est"/>
+				<ref bean="inde"/>
+				<ref bean="now"/>
+			</set>
+		</property>
+		<property name="phoneNums">
+			<set>
+				<value>8341849309</value>
+				<value>9618265905</value>
+			</set>
+		</property>
+		
+	</bean>
+	
+</beans>

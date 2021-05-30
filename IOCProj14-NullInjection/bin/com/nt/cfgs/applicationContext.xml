@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="dob" class="java.util.Date">
+		<property name="date" value="16"/>
+		<property name="month" value="05"/>
+		<property name="year" value="1998"/>
+	</bean>
+
+	<bean id="doj" class="java.util.Date">
+		<constructor-arg name="year" value="2020"/>
+		<constructor-arg name="month" value="00"/>
+		<constructor-arg name="date" value="03"/>
+	</bean>
+	
+	<bean id="dom" class="java.util.Date"/>
+	
+	<bean id="venkat" class="com.nt.comp.PersonInfo">
+		<constructor-arg name="pname" value="Venkateswarlu"/>
+		<constructor-arg name="addrs" value="Madanapalle"/>
+		<constructor-arg name="dob" ref="dob"/>
+		<constructor-arg name="doj" ref="doj"/>
+		<constructor-arg name="dom"><null/></constructor-arg>
+	</bean>
+	
+	<bean id="kishore" class="com.nt.comp.PersonInfo">
+		<constructor-arg name="pname" value="Kishore"/>
+		<constructor-arg name="addrs" value="Madanapalle"/>
+		<constructor-arg name="dob" ref="dob"/>
+		<constructor-arg name="doj"><null/></constructor-arg>
+		<constructor-arg name="dom"><null/></constructor-arg>
+	</bean>
+
+	
+</beans>
