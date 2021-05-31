@@ -1,8 +1,5 @@
 package com.nt.external;
 
-import org.springframework.stereotype.Component;
-
-@Component("scoreComp")
 public class ICCScoreComponentImpl implements IICCScoreComponent {
 
 	public ICCScoreComponentImpl() {
