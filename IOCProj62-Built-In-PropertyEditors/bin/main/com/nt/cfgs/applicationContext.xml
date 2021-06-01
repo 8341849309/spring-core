@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="info" class="com.nt.beans.PersonalInfo">
+		<property name="name" value="Venkateswarlu"/>
+		<property name="age" value="23"/>
+		<property name="luckyNum" value="9"/>
+		<property name="dob" value="16/06/1998"/>
+		<property name="moles" value="Mole on cheek"/>
+		<property name="academicPercentages" value="73"/>
+		<property name="adharNo" value="345964102514"/>
+		<property name="favChar" value="a"/>
+		<property name="fileLocation" value="C://aggah"/>
+		<property name="favLocale" value="hi-IN"/>
+		<property name="fbUrl" value="http://aggah"/>
+		<property name="props" value="name=raja,age=30,addrs=hyd"/>
+	</bean>
+
+</beans>
