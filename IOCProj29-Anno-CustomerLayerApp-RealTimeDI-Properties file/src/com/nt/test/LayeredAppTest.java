@@ -2,6 +2,8 @@ package com.nt.test;
 
 import java.sql.SQLException;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.nt.controller.CustomerController;
@@ -11,7 +13,7 @@ public class LayeredAppTest {
 
 	public static void main(String[] args) {
 
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/nt/cfgs/applicationContext.xml");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/nt/cfgs/applicationContext.xml");
 		CustomerController ctr = ctx.getBean("controller", CustomerController.class);
 
 		CustomerVO vo = new CustomerVO();
@@ -26,8 +28,8 @@ public class LayeredAppTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		ctx.close();
+
+		((AbstractApplicationContext) ctx).close();
 	}
 
 }
