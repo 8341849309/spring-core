@@ -1,0 +1,25 @@
+info:
+  per:
+    id: 846736
+    name: Yudhistir
+    marks:
+       - 90
+       - 63
+       - 56
+    nick-names:
+       - Venkey
+       - Venkat
+    phone-nums:
+       - 8341849309
+       - 9618265905
+    id-cards:
+      adharCard: 345964102510
+      voterId: 92677263
+    fav-fruits:
+      grape: green
+      orange: orange
+      banana: yellow
+    address:
+      door-no: 1-4-2/321
+      street: Ramireddy Layout
+      locality: Neerugattuvari Palli
